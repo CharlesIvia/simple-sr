@@ -4,10 +4,10 @@ const content = document.querySelector(".content");
 
 //Initialize speech recognition
 
-const speechRecognition =
+const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 
-const recognition = new speechRecognition();
+const recognition = new SpeechRecognition();
 
 recognition.onstart = () => {
   console.log("Voice activated!");
@@ -20,9 +20,22 @@ recognition.onresult = (e) => {
 
   const transcript = e.results[current][0].transcript;
   content.textContent = transcript;
+  readOutLoud(transcript);
 };
 
 //Activate speech recognition
 btn.addEventListener("click", () => {
-  recognition.onstart();
+  recognition.start();
 });
+
+//Read speech loud
+
+function readOutLoud(message) {
+  const speech = new SpeechSynthesisUtterance();
+
+  speech.text = message;
+  speech.volume = 1;
+  speech.rate = 1;
+
+  window.speechSynthesis.speak(speech);
+}
