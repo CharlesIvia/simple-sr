@@ -9,3 +9,11 @@ const speechRecognition =
 
 const recognition = new speechRecognition();
 
+recognition.onstart = () => {
+  console.log("Voice activated!");
+};
+
+//Activate speech recognition
+btn.addEventListener("click", () => {
+  recognition.onstart();
+});
