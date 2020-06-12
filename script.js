@@ -1,6 +1,7 @@
 //Query the dom and assign variables
 const btn = document.querySelector(".talk");
 const content = document.querySelector(".content");
+const header = document.querySelector(".top");
 
 //Initialize speech recognition
 
@@ -63,9 +64,20 @@ function readOutLoud(message) {
   } else if (message.includes("Google")) {
     window.open("https://www.google.com/");
     speech.text = "Opening google!";
+  } else if (message.includes("your name")) {
+    speech.text = "My name is Gatsby Assistant!";
+  } else if (message.includes("Dark mode") || message.includes("dark mode")) {
+    document.body.style.background = "rgb(32,33,36)";
+    header.style.color = "white";
+    header.style.textShadow = "none";
+    btn.style.background = "rgb(32,33,36)";
+    btn.style.color = "rgb(237, 77, 77)";
+    speech.text = "Dark mode turned on!";
+  } else if (message.includes("good bye") || message.includes("goodbye")) {
+    speech.text = "Good bye friend. See you soon!";
   }
   speech.volume = 1;
-  speech.rate = 1;
+  speech.rate = 0.8;
 
   window.speechSynthesis.speak(speech);
 }
