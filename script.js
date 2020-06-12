@@ -9,7 +9,6 @@ const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const recognition = new SpeechRecognition();
-
 recognition.onstart = () => {
   console.log("Voice activated!");
 };
@@ -22,8 +21,8 @@ let morningGreetings = [
 ];
 
 let eveningGreeting = [
-  "Hello, good eveing!",
-  "Good eveining! It is a beutiful evening. How are you?",
+  "Hello, good evening!",
+  "Good evening! It is a beutiful evening. How are you?",
 ];
 
 let goodnight = ["Have a lovely night", "Sleep tight! And sweet dreams."];
@@ -46,7 +45,11 @@ btn.addEventListener("click", () => {
 //Read speech loud
 
 function readOutLoud(message) {
+  let synth = window.speechSynthesis;
+  let voiceOptions = synth.getVoices();
+  let voiceChoice = voiceOptions[5];
   const speech = new SpeechSynthesisUtterance();
+  speech.voice = voiceChoice;
 
   speech.text = "I did not get that correctly!";
 
@@ -75,9 +78,11 @@ function readOutLoud(message) {
     speech.text = "Dark mode turned on!";
   } else if (message.includes("good bye") || message.includes("goodbye")) {
     speech.text = "Good bye friend. See you soon!";
+  } else if (message.includes("hello") || message.includes("Hello")) {
+    speech.text = "Hello there. How can I help you?";
   }
   speech.volume = 1;
-  speech.rate = 0.8;
+  speech.rate = 1;
 
   window.speechSynthesis.speak(speech);
 }
