@@ -3,6 +3,7 @@ const btn = document.querySelector(".talk");
 const content = document.querySelector(".content");
 const header = document.querySelector(".top");
 
+
 //Initialize speech recognition
 
 const SpeechRecognition =
@@ -80,6 +81,21 @@ function readOutLoud(message) {
     speech.text = "Good bye friend. See you soon!";
   } else if (message.includes("hello") || message.includes("Hello")) {
     speech.text = "Hello there. How can I help you?";
+  } else if (message.includes("day") || message.includes("date")) {
+    let today = new Date();
+    let day = today.getDate();
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+    function thisMonth() {
+      if (month == 6) {
+        let month = "June";
+        return month;
+      } else if (month == 7) {
+        let month = "July";
+        return month;
+      }
+    }
+    speech.text = `The date is ${day}th ${thisMonth()} ${year}`;
   }
   speech.volume = 1;
   speech.rate = 1;
