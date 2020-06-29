@@ -5,39 +5,71 @@
 }
 
 body {
-  background: rgb(228, 98, 98);
+  background: rgb(194, 175, 175);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: Helvetica, sans-serif;
 }
 
+.container {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 5vh;
+  border-radius: 30px;
+}
+
 h2 {
   text-align: center;
   padding-top: 20px;
+  color: white;
   font-family: "Raleway", sans-serif;
+  line-height: 3.2px;
+  letter-spacing: 1.5px;
 }
 
 button {
   margin-top: 20px;
   font-size: 32px;
-  background: rgb(228, 98, 98);
+  background: black;
   border: none;
   outline: none;
   cursor: pointer;
   color: rgb(179, 255, 0);
 }
 
-button:hover {
+button:hover:focus {
   transform: scale(1.2);
 }
 
-.content {
-  margin-top: 440px;
+.liked {
+  color: rgb(214, 21, 21);
+}
+
+.content,
+.response {
+  margin-top: 40px;
   background: white;
   width: 350px;
   min-height: 50px;
   border-radius: 5px;
   padding: 5px;
+  padding-top: 14px;
   text-align: center;
+  border-radius: 80px 80px 80px 80px;
+}
+
+.content {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.response {
+  text-align: right;
+  padding-right: 15px;
+  background: rgb(201, 196, 196);
 }
