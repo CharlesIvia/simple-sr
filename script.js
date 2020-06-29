@@ -23,7 +23,7 @@ let morningGreetings = [
 
 let eveningGreeting = [
   "Hello, good evening!",
-  "Good evening! It is a beutiful evening. How are you?",
+  "Good evening! It is a beautiful evening today. How are you?",
 ];
 
 let goodnight = ["Have a lovely night", "Sleep tight! And sweet dreams."];
@@ -34,7 +34,8 @@ recognition.onresult = (e) => {
   const current = e.resultIndex;
 
   const transcript = e.results[current][0].transcript;
-  content.textContent = transcript;
+  content.textContent =
+    transcript.charAt(0).toUpperCase() + transcript.slice(1) + "?";
   readOutLoud(transcript);
 };
 
@@ -53,6 +54,7 @@ function readOutLoud(message) {
   speech.voice = voiceChoice;
 
   speech.text = "I did not get that correctly!";
+  response.textContent = speech.text;
 
   if (message.includes("good morning")) {
     let spokenText =
@@ -106,7 +108,6 @@ function readOutLoud(message) {
     response.textContent = speech.text;
   }
   speech.volume = 1;
-  speech.rate = 1;
 
   window.speechSynthesis.speak(speech);
 }
