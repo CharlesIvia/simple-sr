@@ -64,12 +64,35 @@ button:hover:focus {
 }
 
 .content {
-  text-align: left;
-  padding-left: 15px;
+  text-align: right;
+  padding-right: 15px;
 }
 
 .response {
-  text-align: right;
-  padding-right: 15px;
+  text-align: left;
+  padding-left: 15px;
   background: rgb(201, 196, 196);
+}
+.coms {
+  color: rgb(172, 166, 166);
+  font-size: 28px;
+}
+.commands {
+  padding-left: 0;
+  text-align: left;
+}
+
+.list {
+  color: white;
+  margin-top: 14px;
+  text-align: center;
+  width: 330px;
+  list-style: none;
+  line-height: 24px;
+  letter-spacing: 1px;
+}
+
+.list1 {
+  margin-top: 25px;
+  color: white;
 }
