@@ -133,8 +133,6 @@ function readOutLoud(message) {
     response.textContent = "TL:DW";
   }
 
-  speech.volume = 1;
-
   window.speechSynthesis.speak(speech);
 }
 
