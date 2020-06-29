@@ -27,6 +27,24 @@ let eveningGreeting = [
   "Good evening! It is a beautiful evening today. How are you?",
 ];
 
+let jokes = [
+  "What do you call a bear with no teeth? A gummy bear.",
+  "Why did the school kids eat their homework? Because their teacher told them it was a piece of cake.",
+  "What do you call a shoe made out of a banana? A slipper!",
+  "What happens when a frog's car breaks? It gets toad.",
+  "Where do shellfish go to borrow money? From the prawn broker.",
+  "I was wondering why the ball was getting bigger. Then it hit me.",
+  "I have a few jokes about unemployed people, but none of them work.",
+  "How do you make holy water? You boil the hell out of it.",
+  "Will glass coffins be a success? Remains to be seen.",
+  "Did you hear about the guy whose whole left side was cut, off? He’s all right now.",
+  "I can’t believe I got fired from the calendar factory. All I did was take a day off",
+  "The man who survived pepper spray and mustard gas is now a seasoned veteran",
+  "I went to buy some camouflage trousers yesterday but couldn't find any",
+  "I tried to sue the airline for losing my luggage. I lost my case.",
+  "England doesn't have a kidney bank, but it does have a Liverpool.",
+];
+
 let goodnight = ["Have a lovely night", "Sleep tight! And sweet dreams."];
 
 //Fetch results
@@ -105,7 +123,16 @@ function readOutLoud(message) {
     }
     speech.text = `The date is ${day}th ${thisMonth()} ${year}.`;
     response.textContent = speech.text;
+  } else if (message.includes("play some nice music")) {
+    window.open("https://www.youtube.com/watch?v=450p7goxZqg");
+    speech.text = "Playing All of Me by John Legend on, youtube.";
+    response.textContent = speech.text;
+  } else if (message.includes("joke")) {
+    let spokenText = jokes[Math.floor(Math.random() * jokes.length + 1)];
+    speech.text = spokenText;
+    response.textContent = "TL:DW";
   }
+
   speech.volume = 1;
 
   window.speechSynthesis.speak(speech);
