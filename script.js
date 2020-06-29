@@ -3,6 +3,7 @@ const btn = document.querySelector(".talk");
 const content = document.querySelector(".content");
 const header = document.querySelector(".top");
 const response = document.querySelector(".response");
+const talk = document.querySelector(".talk");
 
 //Initialize speech recognition
 
@@ -81,8 +82,6 @@ function readOutLoud(message) {
     document.body.style.background = "rgb(32,33,36)";
     header.style.color = "white";
     header.style.textShadow = "none";
-    btn.style.background = "rgb(32,33,36)";
-    btn.style.color = "rgb(237, 77, 77)";
     speech.text = "Dark mode turned on!";
     response.textContent = speech.text;
   } else if (message.includes("good bye") || message.includes("goodbye")) {
@@ -104,10 +103,21 @@ function readOutLoud(message) {
         return month;
       }
     }
-    speech.text = `The date is ${day}th ${thisMonth()} ${year}`;
+    speech.text = `The date is ${day}th ${thisMonth()} ${year}.`;
     response.textContent = speech.text;
   }
   speech.volume = 1;
 
   window.speechSynthesis.speak(speech);
+}
+
+talk.addEventListener("click", (e) => {
+  talk.classList.toggle("liked");
+  clearLiked();
+});
+
+function clearLiked() {
+  setTimeout(() => {
+    talk.classList = "talk";
+  }, 5000);
 }
