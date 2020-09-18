@@ -123,7 +123,7 @@ function readOutLoud(message) {
     }
     speech.text = `The date is ${day}th ${thisMonth()} ${year}.`;
     response.textContent = speech.text;
-  } else if (message.includes("play some nice music")) {
+  } else if (message.includes("play some music")) {
     window.open("https://www.youtube.com/watch?v=450p7goxZqg");
     speech.text = "Playing All of Me by John Legend on, youtube.";
     response.textContent = speech.text;
