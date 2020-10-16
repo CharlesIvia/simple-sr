@@ -128,41 +128,29 @@ function readOutLoud(message) {
     let year = today.getFullYear();
     function thisMonth() {
       if (month == 1) {
-        let month = "January";
-        return month;
+        return (month = "January");
       } else if (month == 2) {
-        let month = "February";
-        return month;
+        return (month = "February");
       } else if (month == 3) {
-        let month = "March";
-        return month;
+        return (month = "March");
       } else if (month == 4) {
-        let month = "April";
-        return month;
+        return (month = "April");
       } else if (month == 5) {
-        let month = "May";
-        return month;
+        return (month = "May");
       } else if (month == 6) {
-        let month = "June";
-        return month;
+        return (month = "June");
       } else if (month == 7) {
-        let month = "July";
-        return month;
+        return (month = "July");
       } else if (month == 8) {
-        let month = "August";
-        return month;
+        return (month = "August");
       } else if (month == 9) {
-        let month = "September";
-        return month;
+        return (month = "September");
       } else if (month == 10) {
-        let month = "October";
-        return month;
+        return (month = "October");
       } else if (month == 11) {
-        let month = "November";
-        return month;
+        return (month = "November");
       } else if (month == 12) {
-        let month = "December";
-        return month;
+        return (month = "December");
       }
     }
     speech.text = `The date is ${day}th ${thisMonth()} ${year}.`;
