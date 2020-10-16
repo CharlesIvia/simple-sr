@@ -47,6 +47,14 @@ let jokes = [
 
 let goodnight = ["Have a lovely night", "Sleep tight! And sweet dreams."];
 
+let goodMusic = [
+  "https://www.youtube.com/watch?v=YGyMcbhCaxo&ab_channel=bellaunioninc",
+  "https://www.youtube.com/watch?v=450p7goxZqg",
+  "https://www.youtube.com/watch?v=I6wzhp4g2Cw&list=RDI6wzhp4g2Cw&start_radio=1&ab_channel=emPawaAfrica",
+  "https://www.youtube.com/watch?v=-L8hLkg21MQ&ab_channel=SimiVEVO",
+  "https://www.youtube.com/watch?v=vx4d1fhMwdM&list=PLFA6lYcrPBwmveUMRVzVBkhSOI7EQyNct&ab_channel=X3MMusic",
+];
+
 //Fetch results
 
 recognition.onresult = (e) => {
@@ -130,8 +138,8 @@ function readOutLoud(message) {
     speech.text = `The date is ${day}th ${thisMonth()} ${year}.`;
     response.textContent = speech.text;
   } else if (message.includes("play some nice music")) {
-    window.open("https://www.youtube.com/watch?v=450p7goxZqg");
-    speech.text = "Playing All of Me by John Legend on, youtube.";
+    window.open(goodMusic[Math.floor(Math.random() * goodMusic.length)]);
+    speech.text = "I hope you will enjoy my selection!";
     response.textContent = speech.text;
   } else if (message.includes("joke")) {
     let spokenText = jokes[Math.floor(Math.random() * jokes.length + 1)];
