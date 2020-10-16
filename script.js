@@ -158,7 +158,6 @@ function readOutLoud(message) {
   } else if (message.includes("play some nice music")) {
     window.open(goodMusic[Math.floor(Math.random() * goodMusic.length)]);
     speech.text = "I hope you will enjoy my selection!";
-    response.textContent = speech.text;
   } else if (message.includes("joke")) {
     let spokenText = jokes[Math.floor(Math.random() * jokes.length + 1)];
     speech.text = spokenText;
