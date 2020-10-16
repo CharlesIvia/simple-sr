@@ -127,11 +127,41 @@ function readOutLoud(message) {
     let month = today.getMonth() + 1;
     let year = today.getFullYear();
     function thisMonth() {
-      if (month == 6) {
+      if (month == 1) {
+        let month = "January";
+        return month;
+      } else if (month == 2) {
+        let month = "February";
+        return month;
+      } else if (month == 3) {
+        let month = "March";
+        return month;
+      } else if (month == 4) {
+        let month = "April";
+        return month;
+      } else if (month == 5) {
+        let month = "May";
+        return month;
+      } else if (month == 6) {
         let month = "June";
         return month;
       } else if (month == 7) {
         let month = "July";
+        return month;
+      } else if (month == 8) {
+        let month = "August";
+        return month;
+      } else if (month == 9) {
+        let month = "September";
+        return month;
+      } else if (month == 10) {
+        let month = "October";
+        return month;
+      } else if (month == 11) {
+        let month = "November";
+        return month;
+      } else if (month == 12) {
+        let month = "December";
         return month;
       }
     }
