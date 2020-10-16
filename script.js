@@ -72,41 +72,47 @@ function readOutLoud(message) {
   const speech = new SpeechSynthesisUtterance();
   speech.voice = voiceChoice;
 
+  //Set text content
+
+  const setTextContent = () => {
+    return (response.textContent = speech.text);
+  };
+
   speech.text = "I did not get that correctly!";
-  response.textContent = speech.text;
+  setTextContent();
 
   if (message.includes("good morning")) {
     let spokenText =
       morningGreetings[Math.floor(Math.random() * morningGreetings.length)];
     speech.text = spokenText;
-    response.textContent = speech.text;
+    setTextContent();
   } else if (message.includes("evening")) {
     let spokenText =
       eveningGreeting[Math.floor(Math.random() * eveningGreeting.length)];
     speech.text = spokenText;
-    response.textContent = speech.text;
+    setTextContent();
   } else if (message.includes("goodnight")) {
     let spokenText = goodnight[Math.floor(Math.random() * goodnight.length)];
     speech.text = spokenText;
-    response.textContent = speech.text;
+    setTextContent();
   } else if (message.includes("Google")) {
     window.open("https://www.google.com/");
     speech.text = "Opening google!";
-    response.textContent = speech.text;
+    setTextContent();
   } else if (message.includes("your name")) {
     speech.text = "My name is Gatsby Assistant!";
-    response.textContent = speech.text;
+    setTextContent();
   } else if (message.includes("Dark mode") || message.includes("dark mode")) {
     document.body.style.background = "rgb(32,33,36)";
     header.style.color = "white";
     header.style.textShadow = "none";
     speech.text = "Dark mode turned on!";
-    response.textContent = speech.text;
+    setTextContent();
   } else if (message.includes("good bye") || message.includes("goodbye")) {
     speech.text = "Good bye friend. See you soon!";
   } else if (message.includes("hello") || message.includes("Hello")) {
     speech.text = "Hello there. How can I help you?";
-    response.textContent = speech.text;
+    setTextContent();
   } else if (message.includes("day") || message.includes("date")) {
     let today = new Date();
     let day = today.getDate();
